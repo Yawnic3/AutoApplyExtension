@@ -6,7 +6,18 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_popup": "pop.html",
+    "default_popup": "popup/popup.html",
     "default_icon": "images/logo.png"
-  }
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.workday.com/*"],
+      "js": ["scripts/content.js"]
+    }
+  ]
 }
